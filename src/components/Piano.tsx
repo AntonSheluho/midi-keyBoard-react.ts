@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import keys from '../buttonsService/Keys'
 import Button from '../UI/Button'
 import Key from './Key'
+import closeSVG from '../png/closeSVG.svg' 
 
 
 class Piano extends Component {
@@ -22,7 +23,7 @@ class Piano extends Component {
             </div>
         </div>
         <div className="piano">
-            {keys.map(k => <Key id={Date.now()} keyClass={k.keyClass} keyStyle={k.keyStyle} keyName={k.keyName}/>)}
+            {keys.map((k, index) => <Key key={index} keyClass={k.keyClass} keyStyle={k.keyStyle} keyName={k.keyName}/>)}
         </div>
         <div className="buttonExit">Exit</div>
         <div className="root5" id="root5">
@@ -37,7 +38,8 @@ class Piano extends Component {
                 <div className="linksWrap linkWrapActive">
                     <div className="openMark">
                         <img 
-                            src="../png/closeSVG.svg" 
+                            // src="../../public/png/closeSVG.svg" 
+                            src={closeSVG} 
                             alt="close image" 
                             className="imgMark imgMarkActive" 
                         />
@@ -50,7 +52,8 @@ class Piano extends Component {
                 <div className="iconsWrapper iconsWrapperActive1">
                     <div className="icons">
                         <img 
-                            src="../png/closeSVVG.svg" 
+                            // src="../../public/png/closeSVG.svg" 
+                            src={closeSVG} 
                             alt="back image" 
                             className="backAvatar" 
                         />

@@ -7,7 +7,6 @@ import React, { Component, FC } from 'react'
 // }
 
 type Props = {
-    id: number,
     keyClass: string,
     keyStyle: string,
     keyName: string 
@@ -19,6 +18,6 @@ const Key: FC<Props> = ({keyClass: keyClass, keyStyle: keyStyle, keyName: keyNam
       <div className={keyClass} style={{left: keyStyle}}>{keyName}</div>
     )
   
-}
+} 
 
 export default Key

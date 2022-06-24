@@ -1,15 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//     entranceState: false
-// }
-
 interface EntranceState {
     entrance: boolean
 }
 
 const initialState: EntranceState = {
-    entrance: true
+    entrance: false
 }
 
 const entranceSlice = createSlice({

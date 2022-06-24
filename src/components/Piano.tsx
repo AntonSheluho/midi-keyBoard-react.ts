@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import keys from '../buttonsService/Keys'
+import {keys} from '../buttonsService/Keys'
 import Button from '../UI/Button'
 import Key from './Key'
 import closeSVG from '../png/closeSVG.svg' 
@@ -37,8 +37,7 @@ class Piano extends Component {
                 </div>
                 <div className="linksWrap linkWrapActive">
                     <div className="openMark">
-                        <img 
-                            // src="../../public/png/closeSVG.svg" 
+                        <img  
                             src={closeSVG} 
                             alt="close image" 
                             className="imgMark imgMarkActive" 
@@ -51,8 +50,7 @@ class Piano extends Component {
                 </div>
                 <div className="iconsWrapper iconsWrapperActive1">
                     <div className="icons">
-                        <img 
-                            // src="../../public/png/closeSVG.svg" 
+                        <img  
                             src={closeSVG} 
                             alt="back image" 
                             className="backAvatar" 

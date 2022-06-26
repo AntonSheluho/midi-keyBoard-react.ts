@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {keys} from '../buttonsService/Keys'
-import Button from '../UI/Button'
+import Account from './Account'
 import Key from './Key'
-import closeSVG from '../png/closeSVG.svg' 
+
 
 
 class Piano extends Component {
@@ -26,40 +26,7 @@ class Piano extends Component {
             {keys.map((k, index) => <Key key={index} keyClass={k.keyClass} keyStyle={k.keyStyle} keyName={k.keyName}/>)}
         </div>
         <div className="buttonExit">Exit</div>
-        <div className="root5" id="root5">
-            <div className="wrapper">
-                <div className="usersIcon">
-                    <img 
-                        src="https://rickandmortyapi.com/api/character/avatar/19.jpeg" 
-                        alt="avatar" 
-                        className="avatar" 
-                    />
-                </div>
-                <div className="linksWrap linkWrapActive">
-                    <div className="openMark">
-                        <img  
-                            src={closeSVG} 
-                            alt="close image" 
-                            className="imgMark imgMarkActive" 
-                        />
-                    </div>
-                    <div className="welcome">Welcome</div>
-                    <Button buttClass='links link1' text='Change Avatar' />
-                    <Button buttClass='links link2' text='Change Name' />
-                    <Button buttClass='links link3' text='Change Password' />
-                </div>
-                <div className="iconsWrapper iconsWrapperActive1">
-                    <div className="icons">
-                        <img  
-                            src={closeSVG} 
-                            alt="back image" 
-                            className="backAvatar" 
-                        />
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Account/>
       </div>
     )
   }

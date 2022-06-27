@@ -1,21 +1,47 @@
+import do1 from '../audio/right_piano/do1.mp3'
+import re1 from '../audio/right_piano/re1.mp3'
+import mi1 from '../audio/right_piano/mi1.mp3'
+import fa1 from '../audio/right_piano/fa1.mp3'
+import sol1 from '../audio/right_piano/sol1.mp3'
+import lya1 from '../audio/right_piano/lya1.mp3'
+import si1 from '../audio/right_piano/si1.mp3'
+import do2 from '../audio/right_piano/do2.mp3'
+import re2 from '../audio/right_piano/re2.mp3'
+import mi2 from '../audio/right_piano/mi2.mp3'
+import fa2 from '../audio/right_piano/fa2.mp3'
+import sol2 from '../audio/right_piano/sol2.mp3'
+import lya2 from '../audio/right_piano/lya2.mp3'
+import si2 from '../audio/right_piano/si2.mp3'
+import do3 from '../audio/right_piano/do3.mp3'
+import do1D from '../audio/right_piano/do1D.mp3'
+import re1D from '../audio/right_piano/re1D.mp3'
+import fa1D from '../audio/right_piano/fa1D.mp3'
+import sol1D from '../audio/right_piano/sol1D.mp3'
+import lya1D from '../audio/right_piano/lya1D.mp3'
+import do2D from '../audio/right_piano/do2D.mp3'
+import re2D from '../audio/right_piano/re2D.mp3'
+import fa2D from '../audio/right_piano/fa2D.mp3'
+import sol2D from '../audio/right_piano/sol2D.mp3'
+import lya2D from '../audio/right_piano/lya2D.mp3'
+
 type KeyProps = {
     keyClass: string,
     keyStyle: string,
     keyName: string,
     name: string,
     keyCode: string,
-    audio: object,
+    audio: HTMLAudioElement,
     key: string
 }
 
-export const keys: Array<KeyProps> = [
+export const whiteKeys: Array<KeyProps> = [
     {
         keyClass: 'key', 
         keyStyle: '0%', 
         keyName: 'A (До)',
         name: 'KeyA',
         keyCode: 'keyDo1',
-        audio: new Audio('../audio/right_piano/do1.mp3'),
+        audio: new Audio(do1),
         key: 'A',
     },
     {
@@ -24,7 +50,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'S (Ре)',
         name: 'KeyS',
         keyCode: 'keyRe1', 
-        audio: new Audio('../audio/right_piano/re1.mp3'), 
+        audio: new Audio(re1), 
         key: 'S'
     },
     {
@@ -33,7 +59,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'D (Ми)',
         name: 'KeyD',
         keyCode: 'keyMi1',
-        audio: new Audio('../audio/right_piano/mi1.mp3'),
+        audio: new Audio(mi1),
         key: 'D'
     },
     {
@@ -42,7 +68,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'F (Фа)',
         name: 'KeyF',
         keyCode: 'keyFa1', 
-        audio: new Audio('../audio/right_piano/fa1.mp3'), 
+        audio: new Audio(fa1), 
         key: 'F'
     },
     {
@@ -51,7 +77,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'G (Соль)',
         name: 'KeyG',
         keyCode: 'keySol1', 
-        audio: new Audio('../audio/right_piano/sol1.mp3'), 
+        audio: new Audio(sol1), 
         key: 'G'
     },
     {
@@ -60,7 +86,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'H (Ля)',
         name: 'KeyH',
         keyCode: 'keyLya1', 
-        audio: new Audio('../audio/right_piano/lya1.mp3'), 
+        audio: new Audio(lya1), 
         key: 'H'
     },
     {
@@ -69,7 +95,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'J (Си)',
         name: 'KeyJ',
         keyCode: 'keySi1', 
-        audio: new Audio('../audio/right_piano/si1.mp3'), 
+        audio: new Audio(si1), 
         key: 'J'
     },
     {
@@ -78,7 +104,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'K (До)',
         name: 'KeyK',
         keyCode: 'keyDo2', 
-        audio: new Audio('../audio/right_piano/do2.mp3'), 
+        audio: new Audio(do2), 
         key: 'K'
     },
     {
@@ -87,7 +113,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'L (Ре)',
         name: 'KeyL',
         keyCode: 'keyRe2', 
-        audio: new Audio('../audio/right_piano/re2.mp3'), 
+        audio: new Audio(re2), 
         key: 'L'
     },
     {
@@ -96,7 +122,7 @@ export const keys: Array<KeyProps> = [
         keyName: ': (Ми)',
         name: 'Semicolon',
         keyCode: 'keyMi2', 
-        audio: new Audio('../audio/right_piano/mi2.mp3'), 
+        audio: new Audio(mi2), 
         key: 'Semicolon'
     },
     {
@@ -105,7 +131,7 @@ export const keys: Array<KeyProps> = [
         keyName: '" (Фа)',
         name: 'Quote',
         keyCode: 'keyFa2', 
-        audio: new Audio('../audio/right_piano/fa2.mp3'), 
+        audio: new Audio(fa2), 
         key: 'Quote'
     },
     {
@@ -114,7 +140,7 @@ export const keys: Array<KeyProps> = [
         keyName: '| (Соль)',
         name: 'Backslash',
         keyCode: 'keySol2', 
-        audio: new Audio('../audio/right_piano/sol2.mp3'), 
+        audio: new Audio(sol2), 
         key: 'Backslash'
     },
     {
@@ -123,7 +149,7 @@ export const keys: Array<KeyProps> = [
         keyName: '4 (Ля)',
         name: 'Numpad4',
         keyCode: 'keyLya2', 
-        audio: new Audio('../audio/right_piano/lya2.mp3'), 
+        audio: new Audio(lya2), 
         key: 'Numpad4'
     },
     {
@@ -132,7 +158,7 @@ export const keys: Array<KeyProps> = [
         keyName: '5 (Си)',
         name: 'Numpad5',
         keyCode: 'keySi2', 
-        audio: new Audio('../audio/right_piano/si2.mp3'), 
+        audio: new Audio(si2), 
         key: 'Numpad5'
     },
     {
@@ -141,16 +167,19 @@ export const keys: Array<KeyProps> = [
         keyName: '6 (До)',
         name: 'Numpad6',
         keyCode: 'keyDo3', 
-        audio: new Audio('../audio/right_piano/do3.mp3'), 
+        audio: new Audio(do3), 
         key: 'Numpad6'
-    },
+    }
+]
+
+export const blackKeys: Array<KeyProps> =[
     {
         keyClass: 'blackKey', 
         keyStyle: '4%', 
         keyName: 'W (До#)',
         name: 'KeyW',
         keyCode: 'blackKeyC1', 
-        audio: new Audio('../audio/right_piano/do1D.mp3'), 
+        audio: new Audio(do1D), 
         key: 'W'
     },
     {
@@ -159,7 +188,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'E (Ре#)',
         name: 'KeyE',
         keyCode: 'blackKeyD1', 
-        audio: new Audio('../audio/right_piano/re1D.mp3'), 
+        audio: new Audio(re1D), 
         key: 'E'
     },
     {
@@ -168,7 +197,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'T (Фа#)',
         name: 'KeyT',
         keyCode: 'blackKeyF1', 
-        audio: new Audio('../audio/right_piano/fa1D.mp3'), 
+        audio: new Audio(fa1D), 
         key: 'T'
     },
     {
@@ -177,7 +206,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'Y (Соль#)',
         name: 'KeyY',
         keyCode: 'blackKeyG1', 
-        audio: new Audio('../audio/right_piano/sol1D.mp3'), 
+        audio: new Audio(sol1D), 
         key: 'Y'
     },
     {
@@ -186,7 +215,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'U (Ля#)',
         name: 'KeyU',
         keyCode: 'blackKeyA1', 
-        audio: new Audio('../audio/right_piano/lya1D.mp3'), 
+        audio: new Audio(lya1D), 
         key: 'U'
     },
     {
@@ -195,7 +224,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'O (До#)',
         name: 'KeyO',
         keyCode: 'blackKeyC2', 
-        audio: new Audio('../audio/right_piano/do2D.mp3'), 
+        audio: new Audio(do2D), 
         key: 'O'
     },
     {
@@ -204,7 +233,7 @@ export const keys: Array<KeyProps> = [
         keyName: 'P (Ре#)',
         name: 'KeyP',
         keyCode: 'blackKeyD2', 
-        audio: new Audio('../audio/right_piano/re2D.mp3'), 
+        audio: new Audio(re2D), 
         key: 'P'
     },
     {
@@ -213,7 +242,7 @@ export const keys: Array<KeyProps> = [
         keyName: '{ (Фа#)',
         name: 'BracketRight',
         keyCode: 'blackKeyF2', 
-        audio: new Audio('../audio/right_piano/fa2D.mp3'), 
+        audio: new Audio(fa2D), 
         key: 'BracketRight'
     },
     {
@@ -222,7 +251,7 @@ export const keys: Array<KeyProps> = [
         keyName: '7 (Соль#)',
         name: 'Numpad7',
         keyCode: 'blackKeyG2', 
-        audio: new Audio('../audio/right_piano/sol2D.mp3'), 
+        audio: new Audio(sol2D), 
         key: 'Numpad7'
     },
     {
@@ -231,7 +260,7 @@ export const keys: Array<KeyProps> = [
         keyName: '8 (Ля#)',
         name: 'Numpad8',
         keyCode: 'blackKeyA2', 
-        audio: new Audio('../audio/right_piano/lya2D.mp3'), 
+        audio: new Audio(lya2D), 
         key: 'Numpad8'
     },
 ]

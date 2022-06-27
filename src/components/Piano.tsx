@@ -1,26 +1,46 @@
-import React, { Component } from 'react'
-import {keys} from '../buttonsService/Keys'
+import {whiteKeys, blackKeys} from '../buttonsService/Keys'
+import Button from '../UI/Button'
 import Account from './Account'
 import Desk from './Desk'
-import Key from './Key'
+import WhiteKey from './WhiteKey'
+import BlackKey from './BlackKey'
 
 
 
-class Piano extends Component {
-
-  render() {
+const Piano = () => {   
+    
+  
     return (
-      <div className='root4'>
-        <div className="bodyShadow"></div>
-        <Desk/>
-        <div className="piano">
-            {keys.map((k, index) => <Key key={index} keyClass={k.keyClass} keyStyle={k.keyStyle} keyName={k.keyName}/>)}
+      <div  className='root4'>
+        <div className="bodyShadow">
         </div>
-        <div className="buttonExit">Exit</div>
+        <Desk/>
+        <div className="piano"  >
+            {whiteKeys.map((k) => 
+              <WhiteKey
+                key={k.name} 
+                id={k.name}
+                audio={k.audio}
+                keyClass={k.keyClass} 
+                keyStyle={k.keyStyle} 
+                keyName={k.keyName}
+              />
+            )}
+            {blackKeys.map((k) => 
+              <BlackKey 
+                key={k.name} 
+                id={k.name}
+                audio={k.audio}
+                keyClass={k.keyClass} 
+                keyStyle={k.keyStyle} 
+                keyName={k.keyName}
+              />
+            )}
+        </div>
+        <Button buttClass='buttonExit' text='Exit' />
         <Account/>
       </div>
     )
-  }
 }
 
 export default Piano

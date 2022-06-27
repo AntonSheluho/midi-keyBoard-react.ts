@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment'
 
 type Props = {}
 
 const Clock = (props: Props) => {
 
-    const [clock, setClock] = useState(moment().format('hh:mm:ss'))
+    const [clock, setClock] = useState(new Date().toLocaleTimeString())
 
     useEffect(() => {
         let clock = clockInterval()
@@ -13,7 +12,7 @@ const Clock = (props: Props) => {
     })
 
     function clockInterval() {
-        return setInterval(() => setClock(moment().format('hh:mm:ss')), 1000);
+        return setInterval(() => setClock(new Date().toLocaleTimeString()), 1000);
     }
 
 

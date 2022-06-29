@@ -1,11 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {SliceInterface} from './SliceInterface'
 
-interface EntranceState {
-    entrance: boolean
-}
-
-const initialState: EntranceState = {
-    entrance: false
+const initialState: SliceInterface = {
+    value: false
 }
 
 const entranceSlice = createSlice({
@@ -13,7 +10,7 @@ const entranceSlice = createSlice({
     initialState,
     reducers: {
         toggleEntranceState: (state) => {
-            state.entrance = !state.entrance
+            state.value = !state.value
         }
     }
 })

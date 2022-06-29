@@ -1,11 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {SliceInterface} from './SliceInterface'
 
-interface RegistrationState {
-    registration: boolean
-}
-
-const initialState: RegistrationState = {
-    registration: false
+const initialState: SliceInterface = {
+    value: false
 }
 
 const registrationSlice = createSlice({
@@ -13,7 +10,7 @@ const registrationSlice = createSlice({
     initialState,
     reducers: {
         toggleRegistrationState: (state) => {
-            state.registration = !state.registration
+            state.value = !state.value
         }
     }
 })

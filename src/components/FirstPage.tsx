@@ -27,12 +27,12 @@ const FirstPage = () => {
             backShedow.current.style.zIndex = '0'
         }
     }
-    function canEntrance() {
+    function getEntrance() {
         if (isEntrance) {
             return <Entrance/>
         }
     }
-    function canRegistration() {
+    function getRegistration() {
         if (isRegistration) {
             return <Registration/>
         }
@@ -53,8 +53,8 @@ const FirstPage = () => {
                 </div>
                 <div className="pictureShadow" ref={backShedow}></div>
             </div>
-            {canEntrance()}
-            {canRegistration()}
+            {getEntrance()}
+            {getRegistration()}
         </div>
     )
 }

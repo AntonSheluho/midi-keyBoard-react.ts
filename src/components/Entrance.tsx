@@ -1,39 +1,45 @@
-import { Store } from '@reduxjs/toolkit'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleEntranceState } from '../store/slices/EntranceSlice'
-import { disabledEye3 } from '../store/slices/Eye3Slice'
+import { disabledEye3, toggleEntranceEye } from '../store/slices/Eye3Slice'
 import backSVG from '../png/backSVG.svg'
 import eyeDisible from '../png/eye-disible.svg'
+import eyeAbles from '../png/eye-visible.svg'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { selectorEnrtanceEye } from '../store'
 
-// type StoreProps = {
-//     state: Store
-// }
-
+interface EntranceInterface {
+    email: string,
+    password: string,
+}
 
 const Entrance = () => {
-
+    const isDisibleEye = useSelector(selectorEnrtanceEye)
     const dispatch = useDispatch()
+
+    const {register, handleSubmit} = useForm<EntranceInterface>()
+    const onSubmit: SubmitHandler<EntranceInterface> = (data) => {console.log(data)}
 
 
   return (
     <div className="root3">
         <div className="entranceWrapperReg entranceWrapper">
-            <form className="entranceForm">
+            <form onSubmit={handleSubmit(onSubmit)} className="entranceForm">
                 <input 
+                    {...register('email')}
                     type="email" 
+                    id="entranceEmail" 
                     className="formFactor"
-                    placeholder='Email'
-                    required={true}
-                    id='entranceEmail'
                 />
                 <input 
-                    type="password" 
+                    {...register('password')} 
+                    type={
+                        isDisibleEye
+                        ?   'text'
+                        :   'password'
+                    } 
+                    id="entrancePassword" 
                     className="formFactor"
-                    placeholder='Password'
-                    required={true}
-                    id='entrancePassword'
-                    autoComplete='current-password'
                 />
                 <div className="errorEntranceText">Invalid email or password</div>
                 <div className="entranceButtons">
@@ -48,13 +54,17 @@ const Entrance = () => {
                 src={backSVG} 
                 alt="go back" 
                 className="backEntranceMark" 
-                onClick={() => dispatch(toggleEntranceState())}
+                onClick={() => {dispatch(toggleEntranceState()); dispatch(disabledEye3())}}
             />
             <img 
-                src={eyeDisible} 
+                src={
+                    isDisibleEye
+                    ?   eyeAbles
+                    :   eyeDisible
+                } 
                 alt="check password" 
                 className="eye3" 
-                onClick={() => dispatch(disabledEye3())}
+                onClick={() => dispatch(toggleEntranceEye())}
             />
         </div>
     </div>

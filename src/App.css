@@ -718,8 +718,9 @@ body {
 }
 
 .entranceWrapperReg {
-    height: 310px;
+    height: auto;
     width: 610px;
+    padding: 20px 0;
 }
 
 .entranceName {
@@ -745,15 +746,15 @@ body {
 }
 
 .eye1, .eye2 {
-    left: 231px;
+    left: 30rem;
 }
 
 .eye1 {
-    top: 323px;
+    top: 15.85rem;
 }
 
 .eye2 {
-    top: 397px;
+    top: 19.7rem;
 }
 
 .buttonRegistration {

@@ -1,4 +1,4 @@
-import {whiteKeys, blackKeys} from '../buttonsService/Keys'
+import {whiteKeys, blackKeys} from '../appService/Keys'
 import Button from '../UI/Button'
 import Account from './Account'
 import Desk from './Desk'

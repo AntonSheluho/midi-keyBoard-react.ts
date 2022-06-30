@@ -1,24 +1,59 @@
-import React, {useEffect, useState} from 'react'
+import React, { FC } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectorSong1, selectorSong2, selectorSong3 } from '../store'
+import { toggleSongView } from '../store/slices/Song1Slice'
+import { toggleSong2View } from '../store/slices/Song2Slice'
+import { toggleSong3View } from '../store/slices/Song3Slice'
+import Button from '../UI/Button'
+import { SongService } from '../appService/SongService'
 
+interface SongInterface {
+  songText?: string
+}
 
-type Props = {}
+const Song: FC<SongInterface> = (props) => {
+  return (
+    <div>
+      <div className="text">{props.songText}</div>
+      <div className="buttWrapper">
+        <Button buttClass='buttPlay' text='Play' />
+        <Button buttClass='buttPlay' text='Back' />
+      </div>
+    </div>
+  )
+}
 
-const Desk = (props: Props) => {
+const Desk = () => {
+  const isSong1 = useSelector(selectorSong1)
+  const isSong2 = useSelector(selectorSong2)
+  const isSong3 = useSelector(selectorSong3) 
+
+  const dispatch = useDispatch()
   
+  function getTrulySong(): string | undefined {
+    if(isSong1) return SongService.songText1
+    if(isSong2) return SongService.songText2
+    if(isSong3) return SongService.songText3
+  }
 
   return (
     <div className="note">
-            <div className="title">Please choose the song in what you are interested in:</div>
-            <div className="songName">
-            </div>
-            <div className="text"></div>
-            <div className="text"></div>
-            <div className="text"></div>
-            <div className="buttWrapper">
-                <div className="buttPlay">Play</div>
-                <div className="buttPlay">Back</div>
-            </div>
-        </div>
+      <div className="title">Please choose the song in what you are interested in:</div>
+      {!isSong1 && !isSong2 && !isSong3
+        ? (
+          <div className="songName">
+            <div className="song" onClick={() => dispatch(toggleSongView())} >In the end (Linkin park)</div>
+            <div className="song" onClick={() => dispatch(toggleSong2View())} >Ёлочка</div>
+            <div className="song" onClick={() => dispatch(toggleSong3View())} >Песенка Мамонтёнка</div>
+          </div>
+          )
+        : (
+          <Song songText={getTrulySong()}/>
+        )
+      }
+      
+            
+    </div>
   )
 }
 

@@ -4,6 +4,9 @@ import RegistrationSlice from './slices/RegistrationSlice'
 import Eye3Slice from './slices/Eye3Slice'
 import RegistrationEye1Slice from './slices/RegistrationEye1Slice'
 import RegistrationEye2Slice from './slices/RegistrationEye2Slice'
+import Song1Slice from './slices/Song1Slice'
+import Song2Slice from './slices/Song2Slice'
+import Song3Slice from './slices/Song3Slice'
 
 const rootReducer = combineReducers({
     entrance: entranceSlice,
@@ -11,6 +14,9 @@ const rootReducer = combineReducers({
     eye3: Eye3Slice,
     registrationEye1: RegistrationEye1Slice,
     registrationEye2: RegistrationEye2Slice,
+    sogn1: Song1Slice,
+    sogn2: Song2Slice,
+    sogn3: Song3Slice,
 })
 
 const store = configureStore({
@@ -28,5 +34,8 @@ export const selectorRegistration = (state: RootState) => state.regisrtation.val
 export const selectorEnrtanceEye = (state: RootState) => state.eye3.value
 export const selectorRegistrationEye1 = (state: RootState) => state.registrationEye1.value
 export const selectorRegistrationEye2 = (state: RootState) => state.registrationEye2.value
+export const selectorSong1 = (state: RootState) => state.sogn1.value
+export const selectorSong2 = (state: RootState) => state.sogn2.value
+export const selectorSong3 = (state: RootState) => state.sogn3.value
 
 export default store

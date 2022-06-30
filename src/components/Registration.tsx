@@ -9,7 +9,7 @@ import { disabledRegistrationEye1, toggleRegistrationEye1 } from '../store/slice
 import { disabledRegistrationEye2, toggleRegistrationEye2 } from '../store/slices/RegistrationEye2Slice'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import ValidError from '../UI/ValidError'
-import { nameExpretion, passwordExpretion } from '../buttonsService/RegExpr'
+import { nameExpretion, passwordExpretion } from '../appService/RegExpr'
 
 interface RegistrationInterface {
     name: string,
@@ -26,10 +26,12 @@ const Registration = () => {
     const dispatch = useDispatch()
 
     const {register, handleSubmit, formState: {errors}, reset, getValues} = useForm<RegistrationInterface>({
-        mode: 'onChange'
+        mode: 'onBlur'
     })
 
-    const onSubmit: SubmitHandler<RegistrationInterface> = (data) => {console.log(data, getValues('password'))}
+    const onSubmit: SubmitHandler<RegistrationInterface> = (data) => {
+        console.log('data: ', data)
+    }
 
 
   return (
@@ -111,7 +113,6 @@ const Registration = () => {
                         id="password" 
                         placeholder='Password'  
                         title='The password should be min six sings. Min one number, one uppercase and lowercase letter'
-                        // pattern='[0-9A-Za-z]{6,20}'
                         className='formFactor'
                     />
                     <ValidError errorsObject={errors.password} errorsMessage={errors.password?.message} />
@@ -122,8 +123,7 @@ const Registration = () => {
                                 isSemular: (): boolean => {
                                     return getValues('password') === getValues('repeatPassword')
                                 }
-                            },
-                            
+                            }
                         })}
                         type={
                             isDisibledEye2
@@ -134,15 +134,12 @@ const Registration = () => {
                         placeholder='Repeat password'  
                         className='formFactor'
                         style={
-                            errors.repeatPassword && getValues('password') !== ' '
+                            getValues('password') !== getValues('repeatPassword')
                             ? {border: '2px solid red',  boxSizing: 'content-box', height: '28px'}
                             : {border: '2px solid green',  boxSizing: 'content-box', height: '28px'}
                         }
                     />
                     <ValidError errorsObject={errors.repeatPassword} errorsMessage={'Invalid password'} />
-                    {/* <div className="invalidFormText invalidFormText2">
-                        Invalid password
-                    </div> */}
                     <input     // Button to registration
                         type="submit"
                         id="button"

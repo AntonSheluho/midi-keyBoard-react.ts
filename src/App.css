@@ -474,7 +474,7 @@
 }
 
 .text {
-  display: none;
+  display: flex;
   justify-self: center; 
   align-self: center;
   font-size: 30px; 
@@ -484,7 +484,7 @@
 }
 
 .buttWrapper {
-  display: none; 
+  display: flex; 
   justify-content: end; 
   align-items: end;
   flex-direction: row; 

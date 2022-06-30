@@ -4,11 +4,14 @@ import Account from './Account'
 import Desk from './Desk'
 import WhiteKey from './WhiteKey'
 import BlackKey from './BlackKey'
+import IconsDesk from './IconsDesk'
+import { useSelector } from 'react-redux'
+import { selectorChangeIcon } from '../store'
 
 
 
 const Piano = () => {   
-    
+    const isIcon = useSelector(selectorChangeIcon)
   
     return (
       <div  className='root4'>
@@ -39,6 +42,8 @@ const Piano = () => {
         </div>
         <Button buttClass='buttonExit' text='Exit' />
         <Account/>
+        {isIcon && <IconsDesk/>}
+        
       </div>
     )
 }

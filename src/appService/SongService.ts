@@ -17,5 +17,6 @@ export const SongService: SongServiceType = {
     text2: 'You can use either the keyboard or mouse',
     songCode1: 'S  H H  F  D D D  D F S  H H  F  D D D  D F S  H H  F  D D D  D F',
     songCode2: 'G  D D  G  D D  G F D S A    H  K H  G  D D  G F D S A    H  K H  G  D D  G F D S A',
-    songCode3: 'D  G G G G  H  D  G G G G G  A  H H H H  K J  H G G G G  A  K J K J H J  H G  G J  S D F H G',
+    songCode3: `D  G G G G  H  D  G G G G G  A  H H H H  K J <br> 
+                H G G G G  A  K J K J H J  H G  G J  S D F H G`,
 }

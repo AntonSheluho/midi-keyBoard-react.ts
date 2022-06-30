@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectorSong1, selectorSong2, selectorSong3 } from '../store'
-import { toggleSongView } from '../store/slices/Song1Slice'
-import { toggleSong2View } from '../store/slices/Song2Slice'
-import { toggleSong3View } from '../store/slices/Song3Slice'
+import { toggleSongView, disableSong1 } from '../store/slices/Song1Slice'
+import { toggleSong2View, disableSong2 } from '../store/slices/Song2Slice'
+import { toggleSong3View, disableSong3 } from '../store/slices/Song3Slice'
 import Button from '../UI/Button'
 import { SongService } from '../appService/SongService'
 
@@ -12,12 +12,20 @@ interface SongInterface {
 }
 
 const Song: FC<SongInterface> = (props) => {
+  const dispatch = useDispatch()
+
+  function toggleSongs() {
+    dispatch(disableSong1())
+    dispatch(disableSong2())
+    dispatch(disableSong3())
+  }
+
   return (
-    <div>
+    <div style={{display: 'contents'}}>
       <div className="text">{props.songText}</div>
       <div className="buttWrapper">
         <Button buttClass='buttPlay' text='Play' />
-        <Button buttClass='buttPlay' text='Back' />
+        <Button buttClass='buttPlay' text='Back' toggle={toggleSongs} />
       </div>
     </div>
   )

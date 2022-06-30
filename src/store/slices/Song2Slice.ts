@@ -11,9 +11,13 @@ const Song2Slice = createSlice({
     reducers: {
         toggleSong2View: (state) => {
             state.value = !state.value
+        },
+        disableSong2: (state) => {
+            state.value = false
         }
+        
     }
 })
 
-export const {toggleSong2View} = Song2Slice.actions
+export const {toggleSong2View, disableSong2} = Song2Slice.actions
 export default Song2Slice.reducer

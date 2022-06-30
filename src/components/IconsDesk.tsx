@@ -1,9 +1,18 @@
-import React from 'react'
-import closeSVG from '../png/closeSVG.svg'
+import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import closeSVG from '../png/cross.png'
+import { toggleIconsWrap } from '../store/slices/ChangeIconSlice'
 
-type Props = {}
 
-const IconsDesk = (props: Props) => {
+
+const IconsDesk = () => {
+  const dispatch = useDispatch()
+  
+
+  function toggleIconWrap() {
+    dispatch(toggleIconsWrap())
+  }
+
   return (
     <div className="iconsWrapper iconsWrapperActive1">
         <div className="icons">
@@ -11,8 +20,8 @@ const IconsDesk = (props: Props) => {
                 src={closeSVG} 
                 alt="back image" 
                 className="backAvatar" 
+                onClick={() => toggleIconWrap()}
             />
-            
         </div>
     </div>
   )

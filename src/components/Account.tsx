@@ -1,30 +1,32 @@
 import React, { useRef } from 'react'
 import Button from '../UI/Button'
 import closeSVG from '../png/closeSVG.svg' 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toggleIconsWrap } from '../store/slices/ChangeIconSlice'
+import { selectorAccountIcon } from '../store'
 
 const Account = () => {
     const imgRef = useRef<HTMLImageElement>(null)
     const linkWrapRef = useRef<HTMLDivElement>(null)
+    const accountIcon: string = useSelector(selectorAccountIcon)
 
     const dispatch = useDispatch()
 
-    function openLinkWrap() {
+    function openLinkWrap(): void {
         imgRef.current?.classList.toggle('imgMarkActive')
         linkWrapRef.current?.classList.toggle('linksWrapActive')
     }
 
-    function toggleIconWrap() {
+    function toggleIconWrap(): void {
         dispatch(toggleIconsWrap())
     }
-
+    // "https://rickandmortyapi.com/api/character/avatar/19.jpeg"
   return (
     <div className="root5" id="root5">
         <div className="wrapper">
             <div className="usersIcon">
                 <img 
-                    src="https://rickandmortyapi.com/api/character/avatar/19.jpeg" 
+                    src={accountIcon} 
                     alt="avatar" 
                     className="avatar" 
                 />

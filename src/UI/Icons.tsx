@@ -1,10 +1,14 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+  src: string,
+  changeIcon?: (src: string) => void
 
-const Icons = (props: Props) => {
+}
+
+const Icons = ({src, changeIcon}: Props) => {
   return (
-    <img src="" alt="" />
+    <img src={src} alt="icon" className='avatar icon' onClick={() => changeIcon?.(src)} />
   )
 }
 

@@ -4,13 +4,12 @@ import { changeKeyDown, changeKeyUp } from '../functions/KeyboardPianoFunctions'
 type Props = {
     id: string,
     audio: HTMLAudioElement | null,
-    keyClass: string,
     keyStyle: string,
     keyName: string 
 }
 
 
-const Key: FC<Props> = ({id: name, audio: audio, keyClass: keyClass, keyStyle: keyStyle, keyName: keyName}) => {
+const Key: FC<Props> = ({id: name, audio: audio, keyStyle: keyStyle, keyName: keyName}) => {
 
   const ref = useRef<HTMLDivElement | null>(null)
 
@@ -65,7 +64,7 @@ const Key: FC<Props> = ({id: name, audio: audio, keyClass: keyClass, keyStyle: k
   }
 
     return (
-      <div ref={ref} id={name} className={keyClass} style={{left: keyStyle}}>{keyName}</div>
+      <div ref={ref} id={name} className='key' style={{left: keyStyle}}>{keyName}</div>
     )
   
 } 

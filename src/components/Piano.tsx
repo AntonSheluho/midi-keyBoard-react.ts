@@ -23,8 +23,7 @@ const Piano = () => {
               <WhiteKey
                 key={k.name} 
                 id={k.name}
-                audio={k.audio}
-                keyClass={k.keyClass} 
+                audio={k.audio} 
                 keyStyle={k.keyStyle} 
                 keyName={k.keyName}
               />
@@ -34,7 +33,6 @@ const Piano = () => {
                 key={k.name} 
                 id={k.name}
                 audio={k.audio}
-                keyClass={k.keyClass} 
                 keyStyle={k.keyStyle} 
                 keyName={k.keyName}
               />

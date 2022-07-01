@@ -5,12 +5,11 @@ import { changeBlackKeyUp, changeBlackKeyDown } from '../functions/KeyboardPiano
 type Props = {
     id: string,
     audio: HTMLAudioElement,
-    keyClass: string,
     keyStyle: string,
     keyName: string 
 }
 
-const BlackKey: FC<Props> = ({id: name, audio: audio, keyClass: keyClass, keyStyle: keyStyle, keyName: keyName}) => {
+const BlackKey: FC<Props> = ({id: name, audio: audio, keyStyle: keyStyle, keyName: keyName}) => {
 
   const ref = useRef<HTMLDivElement | null>(null)
 
@@ -65,7 +64,7 @@ const BlackKey: FC<Props> = ({id: name, audio: audio, keyClass: keyClass, keySty
   }
 
     return (
-      <div ref={ref} id={name} className={keyClass} style={{left: keyStyle}}>{keyName}</div>
+      <div ref={ref} id={name} className='blackKey' style={{left: keyStyle}}>{keyName}</div>
     )
   
 } 

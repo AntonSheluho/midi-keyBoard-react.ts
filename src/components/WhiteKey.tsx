@@ -71,7 +71,39 @@ const Key: FC<Props> = ({id: name, audio: audio, keyStyle: keyStyle, keyName: ke
 
 export default Key
 
+// let idArray = [];
 
+// function playSong(song) {
+//     clearApi()
+//     const acc = song.split(' ');
+//     let time1 = 0;
+
+//     acc.forEach(item => {
+        
+//         for (let i in whiteKeys) {
+//             if (item == whiteKeys[i].keyName) {
+//                 let id = window.setTimeout(() => {
+//                     whiteKeys[i].keyCode.style.backgroundColor = `bisque`;
+//                     whiteKeys[i].keyCode.style.border = `3px solid black`;
+//                     whiteKeys[i].keyCode.style.height = `91%`; 
+//                     whiteKeys[i].keyCode.style.width = `6.36%`; 
+//                     whiteKeys[i].audio.play();
+    
+//                     let id2 = setTimeout(() => {
+//                         whiteKeys[i].keyCode.style.backgroundColor = `white`;
+//                         whiteKeys[i].keyCode.style.border = `1px solid black`;
+//                         whiteKeys[i].keyCode.style.height = `90%`; 
+//                         whiteKeys[i].keyCode.style.width = `6.66%`; 
+//                         whiteKeys[i].audio.load();
+//                     }, 500)
+//                     idArray.push(id2);
+//                 }, `${time1}`);
+//                 idArray.push(id)
+//                 time1 += 600; 
+//             }
+//         }
+//     })
+// }
 
 
   
